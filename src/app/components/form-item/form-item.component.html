@@ -1,0 +1,44 @@
+<form (ngSubmit)="addItem()" #itemForm="ngForm">
+  <div class="mb-3">
+    <label for="product" class="form-label">Producto</label>
+    <input
+      type="text"
+      [(ngModel)]="newItem.product"
+      name="product"
+      id="product"
+      placeholder="Ingrese el nombre del producto"
+      required
+      class="form-control"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="price" class="form-label">Precio</label>
+    <input
+      type="number"
+      [(ngModel)]="newItem.price"
+      name="price"
+      id="price"
+      placeholder="Ingrese el precio"
+      required
+      min="0"
+      class="form-control"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="quantity" class="form-label">Cantidad</label>
+    <input
+      type="number"
+      [(ngModel)]="newItem.quantity"
+      name="quantity"
+      id="quantity"
+      placeholder="Ingrese la cantidad"
+      required
+      min="1"
+      class="form-control"
+    />
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!itemForm.valid">Agregar Ítem</button>
+</form>
